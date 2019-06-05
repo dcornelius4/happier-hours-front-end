@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 export default class Auth extends PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    onSignIn: PropTypes.func.isRequired,
+    onSignUp: PropTypes.func.isRequired
   }
 
   state = {
-    signIn: '',
-    signUp: '',
+    signInUser: '',
+    signUpUser: '',
     email: '',
     password: ''
   }
@@ -17,7 +18,8 @@ export default class Auth extends PureComponent {
     event.preventDefault();
 
     const { signIn, signUp, email, password } = this.state;
-    this.props.onSubmit(signIn, signUp, email, password);
+    this.props.onSignIn(signInUser, email, password);
+    this.props.onSignUp(signUpUser, email, password);
     this.setState({ signIn: '', signUp: '', email: '', password: '' });
   }
 
@@ -26,13 +28,13 @@ export default class Auth extends PureComponent {
   }
 
   render() {
-    const { signIn, signUp, email, password } = this.state;
+    const { signInUser, signUpUser, email, password } = this.state;
     return (
       <div>
         <fieldset>
-          <form onSubmit={this.handleSubmit}>
-            <input type="radio" name="signIn" value={signIn} onChange={this.handleChange} checked/>
-            <input type="radio" name="signUp" value={signUp} onChange={this.handleChange} />
+          <form onSignIn={this.handleSubmit} onSignUp={this.handleSubmit}>
+            <input type="radio" name="signIn" value={signInUser} onChange={this.handleChange} checked/>
+            <input type="radio" name="signUp" value={signUpUser} onChange={this.handleChange} />
 
             <label htmlFor="signIn">Sign in</label>
             <label htmlFor="signUp">Sign up</label>
