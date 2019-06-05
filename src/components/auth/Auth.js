@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Auth extends PureComponent {
-  static proptypes = {
+  static propTypes = {
     onSubmit: PropTypes.func.isRequired
   }
 
