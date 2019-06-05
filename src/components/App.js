@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import PostId from '../containers/posts/PostId';
 import Home from './Home';
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
     <Router>
       <Link to="/">Home</Link>
       <Switch>
+        <Route path="/posts/:id" component={PostId} />
         <Route path="/" component={Home} />
       </Switch>
     </Router>
