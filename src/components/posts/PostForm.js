@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styles from './PostForm.css';
 
 export default class PostForm extends PureComponent {
   static propTypes = {
@@ -27,7 +28,7 @@ export default class PostForm extends PureComponent {
   render() {
     const { search, times, specials } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className={styles.Form}>
         <input name="search" value={search} onChange={this.handleChange} />
         <input name="times" value={times} onChange={this.handleChange} />
         <input name="specials" value={specials} onChange={this.handleChange} />

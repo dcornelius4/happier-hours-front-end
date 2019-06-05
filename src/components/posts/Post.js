@@ -6,7 +6,7 @@ function Post({ post, updatePost }) {
   return (
     <>
       <Link to={`/posts/${post.id}`}>
-        {post.title}
+        {post.search}
       </Link>
     </>
   );
