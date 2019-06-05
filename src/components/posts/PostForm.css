@@ -1,0 +1,9 @@
+.Form {
+  input {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+}
