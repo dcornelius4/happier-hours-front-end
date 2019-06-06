@@ -39,17 +39,17 @@ export default class Auth extends PureComponent {
     return (
       <div className={styles.Form}>
 
-          <form onSubmit={this.handleSubmit} >
-            <input type="radio" name="button" value='signInUser' onChange={this.handleChange} id="sign-in" />
-            <input type="radio" name="button" value='signUpUser' onChange={this.handleChange} id="sign-up" />
+        <form onSubmit={this.handleSubmit} >
+          <input type="radio" name="button" value='signInUser' onChange={this.handleChange} id="sign-in" />
+          <input type="radio" name="button" value='signUpUser' onChange={this.handleChange} id="sign-up" />
 
-            <label htmlFor="sign-in">Sign in</label>
-            <label htmlFor="sign-up">Sign up</label>
+          <label htmlFor="sign-in">Sign in</label>
+          <label htmlFor="sign-up">Sign up</label>
 
-            <input  type="email" name="email" id="email" placeholder="Email" value={email} onChange={this.handleChange} className={styles.Input} />
-            <input  type="password" name="password" id="password" placeholder ="Password" value={password} onChange={this.handleChange} className={styles.Input} />
-            <button>Submit</button>
-          </form>
+          <input  type="email" name="email" id="email" placeholder="Email" value={email} onChange={this.handleChange} className={styles.Input} />
+          <input  type="password" name="password" id="password" placeholder ="Password" value={password} onChange={this.handleChange} className={styles.Input} />
+          <button>Submit</button>
+        </form>
 
       </div>
     );
