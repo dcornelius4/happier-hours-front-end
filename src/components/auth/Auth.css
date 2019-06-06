@@ -1,4 +1,11 @@
 .Form {
+
+    background-color: #1abc9c;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: none;
+    font-size: 16px;
+
   input[type="radio"] {
     position: fixed;
     left: -100px;
@@ -40,7 +47,7 @@
 
   label {
     position: relative;
-    display: inline-block;
+    justify-content: center;
     text-align: center;
     font-weight: 700;
     cursor: pointer;
@@ -61,23 +68,14 @@
   [id="sign-in"]:checked ~ [for="sign-in"],
   [id="sign-up"]:checked ~ [for="sign-up"] {
     color: #fff;
-    &:after {
-        border-bottom-color: #fff;
-    }
   }
 
   form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    height: 300px;
     text-align: center;
-    margin: 20px;
   }
 
-  body {
-    background-color: #1abc9c;
-    font-size: 16px;
-  }
 }
