@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styles from './Auth.css';
 
 export default class Auth extends PureComponent {
   static propTypes = {
@@ -11,40 +12,45 @@ export default class Auth extends PureComponent {
     signInUser: '',
     signUpUser: '',
     email: '',
-    password: ''
+    password: '',
+    button: ''
   }
 
   handleSubmit = event => {
     event.preventDefault();
 
-    const { signIn, signUp, email, password } = this.state;
-    this.props.onSignIn(signInUser, email, password);
-    this.props.onSignUp(signUpUser, email, password);
-    this.setState({ signIn: '', signUp: '', email: '', password: '' });
+    const { signInUser, signUpUser, email, password, button } = this.state;
+    if(button === 'signInUser') {
+      this.props.onSignIn(signInUser, email, password, button);
+    } else {
+      this.props.onSignUp(signUpUser, email, password, button);
+    }
+    this.setState({ signIn: '', signUp: '', email: '', password: '', button: '' });
+    console.log('hi', this.state);
   }
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
+    console.log('hey', target);
   }
 
   render() {
-    const { signInUser, signUpUser, email, password } = this.state;
+    const { email, password, button } = this.state;
     return (
-      <div>
-        <fieldset>
-          <form onSignIn={this.handleSubmit} onSignUp={this.handleSubmit}>
-            <input type="radio" name="signIn" value={signInUser} onChange={this.handleChange} checked/>
-            <input type="radio" name="signUp" value={signUpUser} onChange={this.handleChange} />
+      <div className={styles.Form}>
 
-            <label htmlFor="signIn">Sign in</label>
-            <label htmlFor="signUp">Sign up</label>
+          <form onSubmit={this.handleSubmit} >
+            <input type="radio" name="button" value='signInUser' onChange={this.handleChange} id="sign-in" />
+            <input type="radio" name="button" value='signUpUser' onChange={this.handleChange} id="sign-up" />
 
-            <input  type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} />
-            <input  type="password" name="password" placeholder ="Password" value={password} onChange={this.handleChange} />
-            <input  type="password" placeholder ="Repeat Password" value={password} onChange={this.handleChange} />
+            <label htmlFor="sign-in">Sign in</label>
+            <label htmlFor="sign-up">Sign up</label>
+
+            <input  type="email" name="email" id="email" placeholder="Email" value={email} onChange={this.handleChange} className={styles.Input} />
+            <input  type="password" name="password" id="password" placeholder ="Password" value={password} onChange={this.handleChange} className={styles.Input} />
             <button>Submit</button>
           </form>
-        </fieldset>
+
       </div>
     );
   }

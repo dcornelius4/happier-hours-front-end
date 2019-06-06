@@ -3,11 +3,11 @@ import { signIn, signUp } from '../actions/authAction';
 import Auth from '../components/auth/Auth';
 
 const mapDispatchToProps = dispatch => ({
-  onSignIn(signInUser, email, password) {
-    dispatch(signIn(signInUser, email, password));
+  onSignIn(signInUser, email, password, button) {
+    dispatch(signIn(signInUser, email, password, button));
   },
-  onSignUp(signUpUser, email, password) {
-    dispatch(signUp(signUpUser, email, password));
+  onSignUp(signUpUser, email, password, button) {
+    dispatch(signUp(signUpUser, email, password, button));
   }
 });
 

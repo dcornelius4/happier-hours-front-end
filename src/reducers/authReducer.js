@@ -1,6 +1,8 @@
 import { SIGN_IN, SIGN_UP } from '../actions/authAction';
 
-export default function reducer(state = {}, action) {
+const initialState = [];
+
+export default function reducer(state = initialState, action) {
   switch(action.type) {
     case SIGN_IN:
       return [...state, action.payload];

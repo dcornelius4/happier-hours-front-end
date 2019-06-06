@@ -1,11 +1,11 @@
 export const SIGN_IN = 'SIGN_IN';
-export const signIn = (signIn, email, password) => ({
+export const signIn = (signInUser, email, password, button) => ({
   type: SIGN_IN,
-  payload: { signIn, email, password }
+  payload: { signInUser, email, password, button }
 });
 
 export const SIGN_UP = 'SIGN_UP';
-export const signUp = (signUp, email, password) => ({
+export const signUp = (signUpUser, email, password, button) => ({
   type: SIGN_UP,
-  payload: { signUp, email, password }
+  payload: { signUpUser, email, password, button }
 });
