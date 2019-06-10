@@ -29,9 +29,9 @@ export default class PostForm extends PureComponent {
     const { search, times, specials } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className={styles.Form}>
-        <input name="search" value={search} onChange={this.handleChange} />
-        <input name="times" value={times} onChange={this.handleChange} />
-        <input name="specials" value={specials} onChange={this.handleChange} />
+        <input name="search" placeholder="Search For a Bar" value={search} onChange={this.handleChange} />
+        <input name="times" placeholder="Happy Hour Times" value={times} onChange={this.handleChange} />
+        <input name="specials" placeholder="Enter Some Specials" value={specials} onChange={this.handleChange} />
         <button>Submit</button>
       </form>
     );

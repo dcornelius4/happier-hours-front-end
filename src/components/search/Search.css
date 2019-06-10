@@ -1,4 +1,8 @@
 .Form {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px;
+
   button {
     width: 200px;
     height: 40px;

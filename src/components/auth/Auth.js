@@ -26,12 +26,10 @@ export default class Auth extends PureComponent {
       this.props.onSignUp(signUpUser, email, password, button);
     }
     this.setState({ signIn: '', signUp: '', email: '', password: '', button: '' });
-    console.log('hi', this.state);
   }
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
-    console.log('hey', target);
   }
 
   render() {
